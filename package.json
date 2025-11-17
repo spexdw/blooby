@@ -1,0 +1,41 @@
+{
+  "name": "blooby",
+  "version": "0.1.0",
+  "description": "A modern database solution for Next.js applications",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "database",
+    "nextjs",
+    "storage",
+    "blob",
+    "blooby"
+  ],
+  "author": "SpeX",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "next": ">=13.0.0"
+  }
+}
